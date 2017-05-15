@@ -72,12 +72,12 @@ Returns the final accumulator value.
 Takes a callback of signature `(item, index) => {}` 
 and returns the index of the first item whose callback returns `true` or a truthy value.
 
-Returns the index of the found item.
+Returns the index of the found item, `-1` if no item is found.
 
 ### `every(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and returns an overall `true` value if **all** callback return `true` or a truthy value.
 
-Returns the `true` if every item in the array has returned `true`.
+Returns the `true` if every item in the array has returned `true`, otherwise `false`.
 
