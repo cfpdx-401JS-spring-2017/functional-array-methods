@@ -31,16 +31,16 @@ function push(array, item) {
 
 Some of the specs for the lab are less onerous than the entire JavaScript specification for the method (for example, no third `array` parameter). The "callback signature" refers to the parameter definition of the supplied function.
 
-** You need to include tests for each method **
+**You need to include tests for each method**
 
-### `forEach`
+### `forEach(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and calls the function for each item in the array. Skips any `undefined` array item values.
 
 Returns `undefined`.
 
-### `map`
+### `map(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and creates a new array with the return value of each called callback. 
@@ -49,14 +49,14 @@ puts `undefined` for that item in the new array.
 
 Returns the "mapped" new array.
 
-### `filter`
+### `filter(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and creates a new array with all items whose callback returned `true` or a truthy value.
 
 Returns the new array of "filtered" items.
 
-### `reduce`
+### `reduce(array, callback [, initialValue])`
 
 Takes a callback of signature `(accumulator, item, index) => {}` and an (optional) 
 second `initialValue` parameter that is the initial value of the accumulator. After each function
@@ -67,14 +67,14 @@ first item as the `accumulator`, and the second array item as the `item`.
 
 Returns the final accumulator value.
 
-### `findIndex`
+### `findIndex(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and returns the index of the first item whose callback returns `true` or a truthy value.
 
 Returns the index of the found item.
 
-### `every`
+### `every(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and returns an overall `true` value if **all** callback return `true` or a truthy value.
