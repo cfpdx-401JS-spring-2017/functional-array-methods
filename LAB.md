@@ -29,7 +29,7 @@ function push(array, item) {
 
 ## Methods to Implement
 
-Some of the specs for the lab are less onerous than the entire JavaScript specification for the method (for example, no third `array` parameter). The "callback signature" refers to the parameter definition of the supplied function.
+Some of the specs for the lab are less onerous than the entire JavaScript specification for the method (for example, no third `array` parameter). The "callback signature" refers to the parameter definition of the supplied callback function.
 
 **You need to include tests for each method**
 
