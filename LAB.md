@@ -3,13 +3,17 @@
 
 ## Description
 
-This is a solo assignment. Try and do these from scratch, **do not google solutions**.
+This is a solo assignment. Try and do these from scratch, **do not google solutions**. Relevant info is in lab details below.
 
 Implement select array methods from scratch (only use `array.length`, `array[i] = value`, `value = array[i]`). 
 
 For example, `push` would look like:
 
 ```js
+// tests
+describe('push', () => 
+
+})
 function push(array, item) {
   array[array.length] = item;
   return array.length;
