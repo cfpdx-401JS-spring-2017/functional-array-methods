@@ -56,7 +56,8 @@ Returns `undefined`.
 
 Takes a callback of signature `(item, index) => {}` 
 and creates a new array with the return value of each called callback. 
-Skips any holes in the array, and mapped array should have hole in same spot.
+Skips any holes in the array, and mapped array should have hole in same spot. The mapped array should have
+the same `.length` value as the original array.
 
 Returns the "mapped" new array.
 
