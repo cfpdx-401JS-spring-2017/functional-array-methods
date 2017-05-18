@@ -40,14 +40,18 @@ describe('Array Methods', () => {
   it('reduce(array, callback [, initialValue])', () => {
     const array = [15, 20, 15, 15, 25];
     const returned = method.reduceFn(array, (acc, item, index) => {
+      return array[index] += 2;
     }, 20);
-    assert.equal(returned, undefined);
+    assert.equal(returned, 120);
   });
 
+
   it('findIndex(array, callback)', () => {
-    // Takes a callback of signature `(item, index) => {}` 
-    // and returns the index of the first item whose callback returns `true` or a truthy value.
-    // Returns the index of the found item, `-1` if no item is found.
+    const array = ['tea', 'banana', 'salmoncookie', 'poptart'];
+    const returned = method.findIndexFn(array, (item, index) => {
+      return array[index] === 'salmoncookie';
+    });
+    assert.equal(returned, 2);
   });
 
   it('every(array, callback)', () => {
