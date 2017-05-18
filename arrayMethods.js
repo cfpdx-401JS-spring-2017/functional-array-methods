@@ -13,10 +13,15 @@ const arrayMethods = {
     map(array, fn) {
         const mappedArray = [];
         for (var i = 0; i < array.length; i++) {
-            if (array[i] === undefined) {
+            if (array.hasOwnProperty(i) === false) {
+                mappedArray[i] = '' ;
+                continue;
+            } else if
+            (array[i] === undefined) {
                 mappedArray[i] = undefined;
                 continue;
             }
+
             fn(array[i], i);
             mappedArray[i] = array[i];
         }
