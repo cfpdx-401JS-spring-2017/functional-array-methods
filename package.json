@@ -1,0 +1,25 @@
+{
+  "name": "functional-array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mofo37/functional-array-methods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mofo37/functional-array-methods/issues"
+  },
+  "homepage": "https://github.com/mofo37/functional-array-methods#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}
