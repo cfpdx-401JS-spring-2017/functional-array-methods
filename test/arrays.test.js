@@ -4,7 +4,7 @@ const method = require('../lib/arrays');
 describe('Array Methods', () => {
 
   it('forEach', () => {
-    const array = [15, 16, 17, undefined, 20];
+    const array = [15, 16, , 17, undefined, 20];
     let indexArr = [];
     let count;
     const returned = method.forEachFn(array, (item, index) => {
@@ -13,16 +13,17 @@ describe('Array Methods', () => {
     });
     assert.equal(returned, undefined);
     assert.equal(count, 22);
-    assert.deepEqual(indexArr, [0, 1, 2, 4]);
+    assert.deepEqual(indexArr, [0, 1, 3, 5]);
   });
 
 
   it('map(array, callback)', () => {
-    const array = [42, 24, 66, undefined, 13];
+    const array = [42, 24, , 66, undefined, 13];
     const returned = method.mapFn(array, (item, index) => {
       array[index] = item + 2;
     });
-    assert.deepEqual(returned, [44, 26, 68, undefined, 15]);
+    assert.equal(returned.length, array.length);
+    assert.deepEqual(returned, [44, 26, , 68, undefined, 15]);
     assert.equal(returned[0], 44);
   });
 
