@@ -54,12 +54,14 @@ describe('Array Methods', () => {
     assert.equal(returned, 2);
   });
 
+
   it('every(array, callback)', () => {
-    const array = ['salmon', 'salad', 'Samantha', 'sorry'];
+    const array = ['salmon', 'salad', 'samantha', 'sorry'];
     const returned = method.everyFn(array, (item, index) => {
-      array[index];
+      return array[index][0] === 's';
     });
-    assert.equal(returned, 'undefined');
+    assert.equal(returned, true);
   });
+
 
 });
