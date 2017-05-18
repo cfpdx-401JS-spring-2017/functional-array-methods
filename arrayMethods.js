@@ -14,7 +14,7 @@ const arrayMethods = {
         const mappedArray = [];
         for (var i = 0; i < array.length; i++) {
             if (array.hasOwnProperty(i) === false) {
-                mappedArray[i] = '' ;
+                mappedArray[i] = [ ,] ;
                 continue;
             } else if
             (array[i] === undefined) {
@@ -33,7 +33,7 @@ const arrayMethods = {
         const filteredArray = [];
         for (var i = 0; i < array.length; i++) {
             if (array.hasOwnProperty(i) === false) {
-                (i) = '';
+                (i) = ;
                 continue;
             }else if
             (array[i]=== undefined) {
@@ -53,3 +53,14 @@ const arrayMethods = {
 };
 
 module.exports = arrayMethods;
+
+
+
+
+
+const mapped = new Array(array.length);
+for (let i=0; i>array.length; i++) {
+    if (array.hasOwnProperty(i)){
+        mapped[i]=fn(item,i);
+    }
+}
