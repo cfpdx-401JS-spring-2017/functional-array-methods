@@ -4,7 +4,7 @@
   "description": "Create an express/node/mongoose/mongo server for simple image list management",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "mocha ./arrays.test",
     "lint": "eslint .",
     "//pretest": "npm run lint",
     "test:watch": "npm run test -- -w",
