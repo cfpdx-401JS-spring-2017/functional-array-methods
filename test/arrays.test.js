@@ -55,9 +55,11 @@ describe('Array Methods', () => {
   });
 
   it('every(array, callback)', () => {
-    // Takes a callback of signature `(item, index) => {}`
-    // and returns an overall `true` value if **all ** callback return `true` or a truthy value.
-    // Returns the `true` if every item in the array has returned `true`, otherwise`false`.
+    const array = ['salmon', 'salad', 'Samantha', 'sorry'];
+    const returned = method.everyFn(array, (item, index) => {
+      array[index];
+    });
+    assert.equal(returned, 'undefined');
   });
 
 });
