@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const forEach = require('../array-methods');
+const { forEach, map } = require('../array-methods');
 
 
 describe('forEach', () => {
@@ -28,7 +28,7 @@ describe('forEach', () => {
   });
 });
 
-describe('map', () => {
+describe.only('map', () => {
   const numbers = [1, undefined, 2, 3];
   let doubles = null;
 
