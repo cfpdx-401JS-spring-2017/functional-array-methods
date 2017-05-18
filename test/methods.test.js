@@ -42,7 +42,8 @@ describe('methods', () => {
     const array = [15, 2, 20, 30, 40];
 
     const returnedValue = arrayMethods.myReduce(array, (acc, item, index) => {
+      return array[index] += 15;
     }, 5);
-    assert.equal(returnedValue, 112);
+    assert.equal(returnedValue, 187);
   });
 });
