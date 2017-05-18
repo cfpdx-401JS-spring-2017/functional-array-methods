@@ -3,11 +3,11 @@ const { forEach, map } = require('../array-methods');
 
 
 describe('forEach', () => {
-  const animals = ['cats', undefined, 'dogs', 'bears'];
+  const animals = ['cats', , 'dogs', 'bears'];
   let elements = [];
   let indexes = [];
 
-  it('calls the callback once for each item in the array', () => {
+  it('calls the callback once for each item in the array, skipping holes', () => {
     forEach(animals, (element) => elements.push(element));
     
     assert.equal(elements.length, 3);
@@ -15,7 +15,7 @@ describe('forEach', () => {
 
   it('pushes the index into the array for each element', () => {
     forEach(animals, (element, idx) => indexes.push(idx));
-
+    
     assert.equal(indexes.length, 3);
     assert.equal(indexes[2], 3);
   });
@@ -28,7 +28,7 @@ describe('forEach', () => {
   });
 });
 
-describe.only('map', () => {
+describe('map', () => {
   const numbers = [1, undefined, 2, , 3];
 
   let doubles = null;

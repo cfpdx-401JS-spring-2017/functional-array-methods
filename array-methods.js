@@ -1,6 +1,6 @@
 function forEach(array, callback) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === undefined) continue;
+    if (!array.hasOwnProperty(i)) continue;
 
     callback(array[i], i);
   }
