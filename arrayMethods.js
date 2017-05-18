@@ -27,6 +27,24 @@ const arrayMethods = {
         }
 
         return mappedArray;
+    },
+
+    filter(array, fn) {
+        const filteredArray = [];
+        for (var i = 0; i < array.length; i++) {
+            if (array.hasOwnProperty(i) === false) {
+                (i) = '';
+                continue;
+            }else if
+            (array[i]=== undefined) {
+            filteredArray[i] = undefined;
+            continue;
+        }
+        
+        fn(array[i], i);
+
+        }
+
     }
 
 
