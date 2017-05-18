@@ -31,12 +31,24 @@ function push(array, item) {
 
 Some of the specs for the lab are less onerous than the entire JavaScript specification for the method (for example, no third `array` parameter). The "callback signature" refers to the parameter definition of the supplied callback function.
 
+#### Array Holes
+
+An array hole is a not defined index property on an array. For example, `const arr = [1,,3]` will have a "hole" meaning there is no index 1 defined for that array. This is different than `const arr = [1, undefined, 3]` because the array _will_ have an index 1 defined for the array, but it's value will be `undefined`.
+
+You can best understand this by looking at the console.log output:
+
+![image](https://cloud.githubusercontent.com/assets/478864/26217500/7e1a2c96-3bbc-11e7-9afb-0a5f51cb68c7.png)
+
+The only way to check for a hole is to use `.hasOwnProperty(property)`:
+
+![image](https://cloud.githubusercontent.com/assets/478864/26217549/a467d920-3bbc-11e7-9fb6-af2bcd470a52.png)
+
 **You need to include tests for each method**
 
 ### `forEach(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
-and calls the function for each item in the array. Skips any `undefined` array item values.
+and calls the function for each item in the array. Skips any holes in the array.
 
 Returns `undefined`.
 
@@ -44,8 +56,7 @@ Returns `undefined`.
 
 Takes a callback of signature `(item, index) => {}` 
 and creates a new array with the return value of each called callback. 
-Skips any `undefined` array item values, but 
-puts `undefined` for that item in the new array. 
+Skips any holes in the array, and mapped array should have hole in same spot.
 
 Returns the "mapped" new array.
 
