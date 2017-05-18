@@ -42,6 +42,12 @@ const arrayMethods = {
       acc += array[i];
     }
     return acc;
+  },
+
+  myFindIndex(array, cb) {
+    for (let i = 0; i < array.length; i++) {
+      if(cb(array[i], i) === true) return i;
+    }
   }
 };
 

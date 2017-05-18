@@ -46,4 +46,13 @@ describe('methods', () => {
     }, 5);
     assert.equal(returnedValue, 187);
   });
+
+  it('findIndex takes in an array and returns the index of the first item which returns true based on the callback', () => {
+    const array = [5, 10, undefined, 20, 30, 40];
+
+    const returnedIndex = arrayMethods.myFindIndex(array, (item, index) => {
+      return array[index] > 30;
+    });
+    assert.equal(returnedIndex, 5);
+  });
 });
