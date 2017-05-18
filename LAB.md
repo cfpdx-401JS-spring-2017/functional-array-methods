@@ -64,7 +64,8 @@ Returns the "mapped" new array.
 ### `filter(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
-and creates a new array with all items whose callback returned `true` or a truthy value.
+and creates a new array with all items whose callback returned `true` or a truthy value. Any holes
+in the array should be skipped (don't call the callback function).
 
 Returns the new array of "filtered" items.
 
@@ -77,6 +78,8 @@ call, the return value is passed as the accumulator argument of the next functio
 If the second `initialValue` parameter is not supplied, the first function call should be the 
 first item as the `accumulator`, and the second array item as the `item`.
 
+Any holes in the array should be skipped (don't call the callback function).
+
 Returns the final accumulator value.
 
 ### `findIndex(array, callback)`
@@ -84,12 +87,16 @@ Returns the final accumulator value.
 Takes a callback of signature `(item, index) => {}` 
 and returns the index of the first item whose callback returns `true` or a truthy value.
 
+Any holes in the array should be skipped (don't call the callback function).
+
 Returns the index of the found item, `-1` if no item is found.
 
 ### `every(array, callback)`
 
 Takes a callback of signature `(item, index) => {}` 
 and returns an overall `true` value if **all** callback return `true` or a truthy value.
+
+Any holes in the array should be skipped (don't call the callback function).
 
 Returns the `true` if every item in the array has returned `true`, otherwise `false`.
 
