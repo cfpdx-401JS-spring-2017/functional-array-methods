@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/VerteDinde/functional-array-methods/issues"
   },
-  "homepage": "https://github.com/VerteDinde/functional-array-methods#readme"
+  "homepage": "https://github.com/VerteDinde/functional-array-methods#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
 }
