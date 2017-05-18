@@ -8,13 +8,11 @@ function forEach(array, callback) {
 }
 
 function map(array, callback) {
-  let newArr = [];
+  let newArr = new Array(array.length);
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i]) {
-      newArr[newArr.length] = callback(array[i]);
-    } else if (array[i] === undefined) {
-      newArr[newArr.length] = array[i];
+    if (array.hasOwnProperty(i)) {
+      newArr[i] = callback(array[i], i);
     }
   }
   return newArr;
