@@ -48,6 +48,13 @@ const arrayMethods = {
     for (let i = 0; i < array.length; i++) {
       if(cb(array[i], i) === true) return i;
     }
+  }, 
+
+  myEvery(array, cb) {
+    for (let i = 0; i < array.length; i++) {
+      if(cb(array[i], i) !== true) return false;
+    } 
+    return true;
   }
 };
 

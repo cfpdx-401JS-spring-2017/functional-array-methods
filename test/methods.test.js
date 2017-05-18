@@ -55,4 +55,18 @@ describe('methods', () => {
     });
     assert.equal(returnedIndex, 5);
   });
+
+  it('every takes in an array and returns true if all items evaluate as true based on the callback, otherwise it returns false', () => {
+    const array = [5, 10];
+
+    const returned = arrayMethods.myEvery(array, (item, index) => {
+      return array[index] > 10;
+    });
+
+    const returnedTrue = arrayMethods.myEvery(array, (item, index) => {
+      return array[index] > 2;
+    });
+    assert.isFalse(returned);
+    assert.isTrue(returnedTrue);
+  });
 });
