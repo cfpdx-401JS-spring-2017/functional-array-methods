@@ -50,6 +50,8 @@ The only way to check for a hole is to use `.hasOwnProperty(property)`:
 Takes a callback of signature `(item, index) => {}` 
 and calls the function for each item in the array. Skips any holes in the array.
 
+Any holes in the array should be skipped (don't call the callback function).
+
 Returns `undefined`.
 
 ### `map(array, callback)`
