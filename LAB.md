@@ -35,7 +35,7 @@ Some of the specs for the lab are less onerous than the entire JavaScript specif
 
 An array hole is a not defined index property on an array. For example, `const arr = [1,,3]` will have a "hole" meaning there is no index 1 defined for that array. This is different than `const arr = [1, undefined, 3]` because the array _will_ have an index 1 defined for the array, but it's value will be `undefined`.
 
-You can best understand this by looking at the console.log output:
+You can best understand this by looking at the `console` output for the following arrays, one with holes, and one with the value `undefined` in each element of the array:
 
 ![image](https://cloud.githubusercontent.com/assets/478864/26217500/7e1a2c96-3bbc-11e7-9afb-0a5f51cb68c7.png)
 
