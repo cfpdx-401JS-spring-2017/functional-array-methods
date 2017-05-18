@@ -8,14 +8,14 @@ function forEach(array, callback) {
 }
 
 function map(array, callback) {
-  let newArr = new Array(array.length);
+  let mapped = new Array(array.length);
 
   for (let i = 0; i < array.length; i++) {
     if (array.hasOwnProperty(i)) {
-      newArr[i] = callback(array[i], i);
+      mapped[i] = callback(array[i], i);
     }
   }
-  return newArr;
+  return mapped;
 }
 
 module.exports = {

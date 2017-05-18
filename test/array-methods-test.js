@@ -4,8 +4,8 @@ const { forEach, map } = require('../array-methods');
 
 describe('forEach', () => {
   const animals = ['cats', , 'dogs', 'bears'];
-  let elements = [];
-  let indexes = [];
+  const elements = [];
+  const indexes = [];
 
   it('calls the callback once for each item in the array, skipping holes', () => {
     forEach(animals, (element) => elements.push(element));
@@ -15,7 +15,7 @@ describe('forEach', () => {
 
   it('pushes the index into the array for each element', () => {
     forEach(animals, (element, idx) => indexes.push(idx));
-    
+
     assert.equal(indexes.length, 3);
     assert.equal(indexes[2], 3);
   });
@@ -46,5 +46,18 @@ describe('map', () => {
     });
 
     assert.deepEqual(indexes, [0, 1, 2, , 4]);
+  });
+});
+
+describe('filter', () => {
+  const numbers = [, 2, 4, 6, 8, 0];
+  let returned = null;
+
+  it('creates a new array with all items whose callback returned true or a truthy value, skipping holes', () => {
+    returned = filter(numbers, (element) => {
+      if (element) return element;
+    });
+
+    assert.deepEqual(returned, [2, 4, 6, 8]);
   });
 });
