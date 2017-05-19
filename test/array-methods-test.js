@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const { forEach, map } = require('../array-methods');
+const { forEach, map, filter } = require('../array-methods');
 
 
 describe('forEach', () => {

@@ -8,7 +8,7 @@ function forEach(array, callback) {
 }
 
 function map(array, callback) {
-  let mapped = new Array(array.length);
+  const mapped = new Array(array.length);
 
   for (let i = 0; i < array.length; i++) {
     if (array.hasOwnProperty(i)) {
@@ -18,7 +18,21 @@ function map(array, callback) {
   return mapped;
 }
 
+function filter(array, callback) {
+  const filtered = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array.hasOwnProperty(i)) {
+      const returned = callback(array[i], i);
+
+      if (returned) filtered[filtered.length] = returned;
+    }
+  }
+  return filtered;
+}
+
 module.exports = {
   forEach,
-  map
+  map,
+  filter
 };
