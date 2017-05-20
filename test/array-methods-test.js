@@ -87,3 +87,22 @@ describe('reduce', () => {
   });
 });
 
+describe('findIndex', () => {
+  const words = ['sup', , 'hey', 'now'];
+
+  it('returns -1 if it does not find the element', () => {
+    const returned = findIndex(words, word => {
+      return word === 'hello';
+    });
+
+    assert.equal(returned, -1);
+  });
+
+  it('returns the index if found', () => {
+    const returned = findIndex(words, word => {
+      return word === 'now';
+    });
+
+    assert.equal(returned, 2);
+  });
+});
