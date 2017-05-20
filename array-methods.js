@@ -40,17 +40,23 @@ function reduce(array, callback, initialValue = null) {
         output = array[i];
         i++;
       }
-
       output = callback(output, array[i], i);
     }
   }
-
   return output;
+}
+
+function findIndex(array, callback) {
+  for (let i = 0; i < array.length; i++) {
+    if (array.hasOwnProperty(i) && callback(array[i], i)) return i;
+  }
+  return -1;
 }
 
 module.exports = {
   forEach,
   map,
   filter,
-  reduce
+  reduce,
+  findIndex
 };

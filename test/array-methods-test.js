@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const { forEach, map, filter, reduce } = require('../array-methods');
+const { forEach, map, filter, reduce, findIndex } = require('../array-methods');
 
 
 describe('forEach', () => {
@@ -103,6 +103,6 @@ describe('findIndex', () => {
       return word === 'now';
     });
 
-    assert.equal(returned, 2);
+    assert.equal(returned, 3);
   });
 });
