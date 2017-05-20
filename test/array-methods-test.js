@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+const { assert } = require('chai');
 const { forEach, map, filter, reduce } = require('../array-methods');
 
 
@@ -8,21 +8,20 @@ describe('forEach', () => {
   const indexes = [];
 
   it('calls the callback once for each item in the array, skipping holes', () => {
-    forEach(animals, element => elements.push(element));
+    forEach(animals, animal => elements.push(animal));
     
     assert.equal(elements.length, 3);
   });
 
   it('pushes the index into the array for each element', () => {
-    forEach(animals, (element, idx) => indexes.push(idx));
+    forEach(animals, (animal, idx) => indexes.push(idx));
 
     assert.equal(indexes.length, 3);
     assert.equal(indexes[2], 3);
   });
 
   it('returns undefined', () => {
-    let returnValue = null;
-    returnValue = forEach(animals, element => indexes.push(element));
+    const returnValue = forEach(animals, animal => indexes.push(animal));
 
     assert.equal(returnValue, undefined);
   });
@@ -31,17 +30,14 @@ describe('forEach', () => {
 describe('map', () => {
   const numbers = [1, undefined, 2, , 3];
 
-  let doubles = null;
-  let indexes = null;
-
   it('creates a new array with the return value of each called callback', () => {
-    doubles = map(numbers, element => element * 2);
+    const doubles = map(numbers, number => number * 2);
 
     assert.deepEqual(doubles, [2, NaN, 4, , 6]);
   });
 
   it('returns array of element indexes', () => {
-    indexes = map(numbers, (element, idx) => {
+    const indexes = map(numbers, (number, idx) => {
       return idx;
     });
 
@@ -51,11 +47,10 @@ describe('map', () => {
 
 describe('filter', () => {
   const numbers = [, 2, 4, 6, 8, 0];
-  let returned = null;
 
   it('creates a new array with all items whose callback returned true or a truthy value, skipping holes', () => {
-    returned = filter(numbers, element => {
-      if (element) return element;
+    const returned = filter(numbers, number => {
+      if (number) return number;
     });
 
     assert.deepEqual(returned, [2, 4, 6, 8]);
@@ -66,12 +61,9 @@ describe('reduce', () => {
   // TODO: when I add holes to this array, it breaks. why, if the logic is inside of the hasOwnProperty check? 
   const numbers = [1, 2, 3];
   const words = ['sup', 'hey', 'now'];
-  let accReturned = null;
-  let noAccReturned = null;
-  let wordsReturned = null;
 
   it('returns the sum of all numbers using accumulator', () => {
-    accReturned = reduce(numbers, (acc, number) => {
+    const accReturned = reduce(numbers, (acc, number) => {
       return acc + number;
     }, 0);
 
@@ -79,7 +71,7 @@ describe('reduce', () => {
   });
 
   it('returns the sum of all numbers, without set accumulator', () => {
-    noAccReturned = reduce(numbers, (acc, number) => {
+    const noAccReturned = reduce(numbers, (acc, number) => {
       return acc + number;
     });
 
@@ -87,10 +79,11 @@ describe('reduce', () => {
   });
 
   it('returns concatenated word', () => {
-    wordsReturned = reduce(words, (acc, word) => {
+    const wordsReturned = reduce(words, (acc, word) => {
       return acc + word;
     });
 
     assert.equal(wordsReturned, 'supheynow');
   });
 });
+
