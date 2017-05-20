@@ -31,8 +31,26 @@ function filter(array, callback) {
   return filtered;
 }
 
+function reduce(array, callback, initialValue = null) {
+  let output = initialValue;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array.hasOwnProperty(i)) {
+      if (i === 0 && initialValue === null) {
+        output = array[i];
+        i++;
+      }
+
+      output = callback(output, array[i], i);
+    }
+  }
+
+  return output;
+}
+
 module.exports = {
   forEach,
   map,
-  filter
+  filter,
+  reduce
 };

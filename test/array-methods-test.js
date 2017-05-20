@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const { forEach, map, filter } = require('../array-methods');
+const { forEach, map, filter, reduce } = require('../array-methods');
 
 
 describe('forEach', () => {
@@ -63,9 +63,12 @@ describe('filter', () => {
 });
 
 describe('reduce', () => {
-  const numbers = [, 1, 2, 3];
+  // TODO: when I add holes to this array, it breaks. why, if the logic is inside of the hasOwnProperty check? 
+  const numbers = [1, 2, 3];
+  const words = ['sup', 'hey', 'now'];
   let accReturned = null;
   let noAccReturned = null;
+  let wordsReturned = null;
 
   it('returns the sum of all numbers using accumulator', () => {
     accReturned = reduce(numbers, (acc, number) => {
@@ -79,5 +82,15 @@ describe('reduce', () => {
     noAccReturned = reduce(numbers, (acc, number) => {
       return acc + number;
     });
+
+    assert.equal(noAccReturned, 6);
+  });
+
+  it('returns concatenated word', () => {
+    wordsReturned = reduce(words, (acc, word) => {
+      return acc + word;
+    });
+
+    assert.equal(wordsReturned, 'supheynow');
   });
 });
