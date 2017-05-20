@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const { forEach, map, filter, reduce, findIndex } = require('../array-methods');
+const { forEach, map, filter, reduce, findIndex, every } = require('../array-methods');
 
 
 describe('forEach', () => {
