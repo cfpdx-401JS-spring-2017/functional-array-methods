@@ -1,7 +1,6 @@
 const { assert } = require('chai');
 const { forEach, map, filter, reduce, findIndex, every } = require('../array-methods');
 
-
 describe('forEach', () => {
   const animals = ['cats', , 'dogs', 'bears'];
   const elements = [];
@@ -58,9 +57,8 @@ describe('filter', () => {
 });
 
 describe('reduce', () => {
-  // TODO: when I add holes to this array, it breaks. why, if the logic is inside of the hasOwnProperty check? 
-  const numbers = [1, 2, 3];
-  const words = ['sup', 'hey', 'now'];
+  const numbers = [1, , 2, 3];
+  const words = ['sup', , 'hey', 'now'];
 
   it('returns the sum of all numbers using accumulator', () => {
     const accReturned = reduce(numbers, (acc, number) => {

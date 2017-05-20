@@ -38,7 +38,12 @@ function reduce(array, callback, initialValue = null) {
     if (array.hasOwnProperty(i)) {
       if (i === 0 && initialValue === null) {
         output = array[i];
-        i++;
+
+        if (array[i + 1] !== undefined) {
+          i++;
+        } else {
+          continue;
+        }
       }
       output = callback(output, array[i], i);
     }
