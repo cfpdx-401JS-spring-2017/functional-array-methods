@@ -106,3 +106,19 @@ describe('findIndex', () => {
     assert.equal(returned, 3);
   });
 });
+
+describe('every', () => {
+  const numbers = [7, 8, , 9, 10];
+
+  it('returns true if callback returns true for each element', () => {
+    const returned = every(numbers, number => number > 5);
+
+    assert.equal(returned, true);
+  });
+
+  it('returns false if callback ever returns false', () => {
+    const returned = every(numbers, number => number > 10);
+
+    assert.equal(returned, false);
+  });
+});
