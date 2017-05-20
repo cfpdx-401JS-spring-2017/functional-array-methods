@@ -8,7 +8,7 @@ describe('forEach', () => {
   const indexes = [];
 
   it('calls the callback once for each item in the array, skipping holes', () => {
-    forEach(animals, (element) => elements.push(element));
+    forEach(animals, element => elements.push(element));
     
     assert.equal(elements.length, 3);
   });
@@ -22,7 +22,7 @@ describe('forEach', () => {
 
   it('returns undefined', () => {
     let returnValue = null;
-    returnValue = forEach(animals, (element) => indexes.push(element));
+    returnValue = forEach(animals, element => indexes.push(element));
 
     assert.equal(returnValue, undefined);
   });
@@ -35,7 +35,7 @@ describe('map', () => {
   let indexes = null;
 
   it('creates a new array with the return value of each called callback', () => {
-    doubles = map(numbers, (element) => element * 2);
+    doubles = map(numbers, element => element * 2);
 
     assert.deepEqual(doubles, [2, NaN, 4, , 6]);
   });
@@ -54,10 +54,30 @@ describe('filter', () => {
   let returned = null;
 
   it('creates a new array with all items whose callback returned true or a truthy value, skipping holes', () => {
-    returned = filter(numbers, (element) => {
+    returned = filter(numbers, element => {
       if (element) return element;
     });
 
     assert.deepEqual(returned, [2, 4, 6, 8]);
+  });
+});
+
+describe('reduce', () => {
+  const numbers = [, 1, 2, 3];
+  let accReturned = null;
+  let noAccReturned = null;
+
+  it('returns the sum of all numbers using accumulator', () => {
+    accReturned = reduce(numbers, (acc, number) => {
+      return acc + number;
+    }, 0);
+
+    assert.equal(accReturned, 6);
+  });
+
+  it('returns the sum of all numbers, without set accumulator', () => {
+    noAccReturned = reduce(numbers, (acc, number) => {
+      return acc + number;
+    });
   });
 });
