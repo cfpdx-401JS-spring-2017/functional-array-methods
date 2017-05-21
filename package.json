@@ -2,15 +2,13 @@
   "name": "backend-quiz",
   "version": "1.0.0",
   "description": "Create an express/node/mongoose/mongo server for simple image list management",
-  "main": "server.js",
   "scripts": {
     "test": "mocha ./arrays.test",
     "lint": "eslint .",
     "//pretest": "npm run lint",
     "test:watch": "npm run test -- -w",
     "test:unit": "mocha test/unit",
-    "test:e2e": "mocha test/e2e",
-    "start": "nodemon server.js"
+    "test:e2e": "mocha test/e2e"
   },
   "repository": {
     "type": "git",

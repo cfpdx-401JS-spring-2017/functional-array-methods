@@ -1,6 +1,5 @@
 const arrayMethods = {
 
-
     forEach(array, fn) {
         for (var i = 0; i < array.length; i++) {
             if (array[i] === undefined) continue;
@@ -14,7 +13,6 @@ const arrayMethods = {
         const mappedArray = [];
         for (var i = 0; i < array.length; i++) {
             if (array.hasOwnProperty(i) === false) {
-                mappedArray[i] = [ ,] ;
                 continue;
             } else if
             (array[i] === undefined) {
@@ -28,7 +26,7 @@ const arrayMethods = {
 
         return mappedArray;
     },
-
+/*
     filter(array, fn) {
         const filteredArray = [];
         for (var i = 0; i < array.length; i++) {
@@ -46,7 +44,7 @@ const arrayMethods = {
         }
 
     }
-
+*/
 
 
 
@@ -58,9 +56,9 @@ module.exports = arrayMethods;
 
 
 
-const mapped = new Array(array.length);
+/*const mapped = new Array(array.length);
 for (let i=0; i>array.length; i++) {
     if (array.hasOwnProperty(i)){
         mapped[i]=fn(item,i);
     }
-}
+}*/
