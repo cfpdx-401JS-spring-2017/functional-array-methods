@@ -20,9 +20,9 @@ const methods = {
 
     map: function (array, callback) {
         let i = 0;
-        let mappedArray = []; 
+        let mappedArray = new Array (array.length); 
         while(i < array.length){
-            mappedArray[mappedArray.length] = callback(array[i], i);
+            mappedArray[i] = callback(array[i], i);
             i++;
         }
         return mappedArray;

@@ -24,11 +24,11 @@ describe('forEach', () => {
 
 describe('map', () => {
     it('calls fn with each item in array and returns new array', () => {
-        const array = [1, 2, 3];
-        map(array, (item, index) => {
-            array[index] = item + 1;
+        const array = [1, 2, 3, 4, ,];
+        let newArr = map(array, (item, index) => {
+            return item + 1;
         });
-        assert.deepEqual(array, [2,3,4]);
+        assert.deepEqual(newArr, [2,3,4,5,,]);
         
     });
 });
