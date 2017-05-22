@@ -1,7 +1,7 @@
 const arrayMethods = {
 
     forEach(array, fn) {
-        for (var i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (array[i] === undefined) continue;
             fn(array[i], i);
         }
@@ -11,7 +11,7 @@ const arrayMethods = {
 
     map(array, fn) {
         const mappedArray = [];
-        for (var i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (array.hasOwnProperty(i) === false) {
                 continue;
             } else if

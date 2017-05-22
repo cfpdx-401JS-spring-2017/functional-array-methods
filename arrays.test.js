@@ -30,3 +30,15 @@ describe('map', () => {
     });
 
 });
+
+describe('filter', () => {
+    it('calls fn for each item in array and returns new array with callbacked items that evaluate to truth or tuthy', () => {
+        const array = [1, 2, 3, , 4, undefined];
+
+        const filteredArray = arrayMethods.filter(array, (item, index) => {
+            array[index] = item > 2;
+        });
+        assert.deepEqual(filteredArray, [3,4]);
+    });
+
+});
