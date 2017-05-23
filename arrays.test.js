@@ -22,10 +22,11 @@ describe('map', () => {
         const array = [1, 2, 3, , 4, undefined];
 
         const mappedArray = arrayMethods.map(array, (item, index) => {
-            array[index] = item + 1;
+            return item + 1;
 
         });
         assert.deepEqual(mappedArray, [2, 3, 4, , 5, undefined]);
+        assert.notDeepEqual(mappedArray, array);
 
     });
 
@@ -34,11 +35,12 @@ describe('map', () => {
 describe('filter', () => {
     it('calls fn for each item in array and returns new array with callbacked items that evaluate to truth or tuthy', () => {
         const array = [1, 2, 3, , 4, undefined];
-
+        //index=current index value [0,1,2,3,4,5]
+        //item=each item in array[1,2,3,4,undefined]
         const filteredArray = arrayMethods.filter(array, (item, index) => {
-            array[index] = item > 2;
+            return item > 2;
         });
-        assert.deepEqual(filteredArray, [3,4]);
+        assert.deepEqual(filteredArray, [3, 4]);
     });
 
 });

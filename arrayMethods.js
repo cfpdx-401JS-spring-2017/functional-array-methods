@@ -20,8 +20,8 @@ const arrayMethods = {
                 continue;
             }
 
-            fn(array[i], i);
-            mappedArray[i] = array[i];
+            const results = fn(array[i], i);
+            mappedArray[i] = results;
         }
 
         return mappedArray;
@@ -30,16 +30,14 @@ const arrayMethods = {
     filter(array, fn) {
         const filteredArray = [];
         for (var i = 0; i < array.length; i++) {
-            if (array.hasOwnProperty(i)) {
+            if (array.hasOwnProperty(i) === false) {
                 continue;
 
             } else if (fn(array[i], i) === true) {
-                array[array.length] = i;
-                return array.length;
+                filteredArray[filteredArray.length]=array[i];
             }
-            filteredArray[i] = array[i];
-            return filteredArray;
         }
+        return filteredArray;
     }
 
 };
