@@ -34,8 +34,10 @@ const arrayMethods = {
                 continue;
 
             } else if (fn(array[i], i) === true) {
-                array[i] = filteredArray[i];
+                array[array.length] = i;
+                return array.length;
             }
+            filteredArray[i] = array[i];
             return filteredArray;
         }
     }
