@@ -26,27 +26,19 @@ const arrayMethods = {
 
         return mappedArray;
     },
-/*
+
     filter(array, fn) {
         const filteredArray = [];
         for (var i = 0; i < array.length; i++) {
-            if (array.hasOwnProperty(i) === false) {
-                (i) = ;
+            if (array.hasOwnProperty(i)) {
                 continue;
-            }else if
-            (array[i]=== undefined) {
-            filteredArray[i] = undefined;
-            continue;
-        }
-        
-        fn(array[i], i);
 
+            } else if (fn(array[i], i) === true) {
+                array[i] = filteredArray[i];
+            }
+            return filteredArray;
         }
-
     }
-*/
-
-
 
 };
 
