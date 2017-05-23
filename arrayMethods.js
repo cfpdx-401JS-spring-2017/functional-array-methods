@@ -49,18 +49,24 @@ const arrayMethods = {
             }
         }
         return -1;
-    }
+    },
 
-every(array, fn) {
-    for (var i = 0; i < array.length; i++) {
-        if (array.hasOwnProperty(i) === false) {
-            continue;
-        }else if (fn(array[i], i){
-            return
+    every(array, fn) {
+        const mappedArray = [];
+        for (var i = 0; i < array.length; i++) {
+            if (array.hasOwnProperty(i) === false) {
+                continue;
+            }
+            const results = fn(array[i], i);
+            mappedArray[i] = results;
+            if (mappedArray[i] === false) {
+                return false;
+            }
+            else {
+                return true;
+            }
         }
     }
-    return false;
-}
 
 };
 module.exports = arrayMethods;
