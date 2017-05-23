@@ -45,7 +45,7 @@ describe('filter', () => {
 });
 
 describe('findIndex', () => {
-    
+
     it('calls fn for items in array, returns index of first true item & skips holes', () => {
         const array = [1, 2, 3, , 4, undefined];
         const findResults = arrayMethods.findIndex(array, (item, index) => {
@@ -61,6 +61,24 @@ describe('findIndex', () => {
             return item > 4;
         });
         assert.equal(findResults, -1);
+    });
+});
+
+describe('every', () => {
+    it('returns true if every item in array if all callback returns true', () => {
+        const array = [1, 2, 3, , 4];
+        const results = arrayMethods.every(array, (item, index) => {
+            return item > 0;
+        });
+        assert.equal(results, true);
+    });
+
+    it('otherwise it returns false', () => {
+        const array = [1, 2, 3, , 4];
+        const results = array.Methods.every(array, (item, index) => {
+            return item === 4;
+        });
+        assert.equal(results, false);
     });
 });
 

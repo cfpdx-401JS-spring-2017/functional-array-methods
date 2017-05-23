@@ -50,6 +50,18 @@ const arrayMethods = {
         }
         return -1;
     }
+
+every(array, fn) {
+    for (var i = 0; i < array.length; i++) {
+        if (array.hasOwnProperty(i) === false) {
+            continue;
+        }else if (fn(array[i], i){
+            return
+        }
+    }
+    return false;
+}
+
 };
 module.exports = arrayMethods;
 
