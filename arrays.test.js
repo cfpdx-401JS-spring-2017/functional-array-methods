@@ -45,18 +45,21 @@ describe('filter', () => {
 });
 
 describe('findIndex', () => {
-    it('calls fn for each item in array, returns index of first true item & skips holes', () => {
+    
+    it('calls fn for items in array, returns index of first true item & skips holes', () => {
         const array = [1, 2, 3, , 4, undefined];
         const findResults = arrayMethods.findIndex(array, (item, index) => {
-            return item = 4;
+            return item === 4;
         });
         assert.equal(findResults, 4);
-    })
+    });
+
+
     it('returns -1 if no item found,', () => {
         const array = [1, 2, 3, , 4, undefined];
         const findResults = arrayMethods.findIndex(array, (item, index) => {
             return item > 4;
-        })
+        });
         assert.equal(findResults, -1);
     });
 });

@@ -45,15 +45,12 @@ const arrayMethods = {
             if (array.hasOwnProperty(i) === false) {
                 continue;
             } else if (fn(array[i], i) === true) {
-                return array[i];
-            } else
-                return -1;
-
+                return i;
+            }
         }
+        return -1;
     }
-
 };
-
 module.exports = arrayMethods;
 
 
