@@ -34,10 +34,22 @@ const arrayMethods = {
                 continue;
 
             } else if (fn(array[i], i) === true) {
-                filteredArray[filteredArray.length]=array[i];
+                filteredArray[filteredArray.length] = array[i];
             }
         }
         return filteredArray;
+    },
+
+    findIndex(array, fn) {
+        for (var i = 0; i < array.length; i++) {
+            if (array.hasOwnProperty(i) === false) {
+                continue;
+            } else if (fn(array[i], i) === true) {
+                return array[i];
+            } else
+                return -1;
+
+        }
     }
 
 };
