@@ -52,20 +52,17 @@ const arrayMethods = {
     },
 
     every(array, fn) {
-        const mappedArray = [];
         for (var i = 0; i < array.length; i++) {
             if (array.hasOwnProperty(i) === false) {
                 continue;
             }
             const results = fn(array[i], i);
-            mappedArray[i] = results;
-            if (mappedArray[i] === false) {
+            
+            if (results === false) {
                 return false;
-            }
-            else {
-                return true;
-            }
+            }        
         }
+        return true;
     }
 
 };

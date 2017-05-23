@@ -76,7 +76,7 @@ describe('every', () => {
     it('otherwise it returns false', () => {
         const array = [1, 2, 3, , 4];
         const results = arrayMethods.every(array, (item, index) => {
-            return item === 4;
+            return item < 3;
         });
         assert.equal(results, false);
     });
