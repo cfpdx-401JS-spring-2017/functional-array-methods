@@ -6,10 +6,10 @@ describe('map', () => {
 
   it('performs method on each item of array and return an array', () => {
     const array = [1, 2, 3];
-    map(array, (item, index) => {
+    na = map(array, (item, index) => {
       array[index] = item + 1;
     });
-    assert.deepEqual(array, [2, 3, 4]);
+    assert.deepEqual(na, [2, 3, 4]);
   });
 
   it('performs function on each valid item in array', () => {
