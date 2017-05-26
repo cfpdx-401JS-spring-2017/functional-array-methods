@@ -80,5 +80,22 @@ describe('every', () => {
         });
         assert.equal(results, false);
     });
-});
+}),
+
+    describe('reduce', () => {
+        it('returns the accumulator and a single value ', () => {
+            const array = [1, 2, 3, , 4];
+            const results = arrayMethods.reduce(array, (acc, currentItem, index) => {
+                return acc += currentItem;
+            }, 0);
+            assert.equal(results, 10);
+        });
+
+
+
+        // it('uses the first item in the array as accumulator if no initial value is provided', () => {
+
+        // })
+    });
+
 

@@ -22,7 +22,7 @@ const arrayMethods = {
 
     filter(array, fn) {
         const filteredArray = [];
-        for (var i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (!array.hasOwnProperty(i)) {
                 continue;
             }
@@ -34,7 +34,7 @@ const arrayMethods = {
     },
 
     findIndex(array, fn) {
-        for (var i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (!array.hasOwnProperty(i)) {
                 continue;
             } else if (fn(array[i], i)) {
@@ -45,19 +45,36 @@ const arrayMethods = {
     },
 
     every(array, fn) {
-        for (var i = 0; i < array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             if (!array.hasOwnProperty(i)) {
                 continue;
             }
             const results = fn(array[i], i);
 
-            if (!results) { 
+            if (!results) {
                 return false;
             }
         }
         return true;
-    }
+    },
 
+
+    reduce(array, fn, initialValue) {
+        let acc = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (!array.hasOwnProperty(i)) {
+                continue;
+            }
+            if (!initialValue) {
+                let currentItem = acc;
+
+                acc = fn(acc, currentItem, i);
+
+            }
+        }
+        return acc;
+
+    }
 };
 
 module.exports = arrayMethods;
