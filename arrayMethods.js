@@ -10,30 +10,23 @@ const arrayMethods = {
 
 
     map(array, fn) {
-        const mappedArray = [];
+        const mappedArray = new Array(array.length);
         for (let i = 0; i < array.length; i++) {
-            if (array.hasOwnProperty(i) === false) {
-                continue;
-            } else if
-            (array[i] === undefined) {
-                mappedArray[i] = undefined;
-                continue;
+            if (array.hasOwnProperty(i)) {
+                mappedArray[i] = fn(array[i], i);
             }
-
-            const results = fn(array[i], i);
-            mappedArray[i] = results;
         }
-
         return mappedArray;
     },
+
 
     filter(array, fn) {
         const filteredArray = [];
         for (var i = 0; i < array.length; i++) {
-            if (array.hasOwnProperty(i) === false) {
+            if (!array.hasOwnProperty(i)) {
                 continue;
-
-            } else if (fn(array[i], i) === true) {
+            }
+            if (fn(array[i], i)) {
                 filteredArray[filteredArray.length] = array[i];
             }
         }
@@ -42,9 +35,9 @@ const arrayMethods = {
 
     findIndex(array, fn) {
         for (var i = 0; i < array.length; i++) {
-            if (array.hasOwnProperty(i) === false) {
+            if (!array.hasOwnProperty(i)) {
                 continue;
-            } else if (fn(array[i], i) === true) {
+            } else if (fn(array[i], i)) {
                 return i;
             }
         }
@@ -53,19 +46,20 @@ const arrayMethods = {
 
     every(array, fn) {
         for (var i = 0; i < array.length; i++) {
-            if (array.hasOwnProperty(i) === false) {
+            if (!array.hasOwnProperty(i)) {
                 continue;
             }
             const results = fn(array[i], i);
-            
-            if (results === false) {
+
+            if (!results) { 
                 return false;
-            }        
+            }
         }
         return true;
     }
 
 };
+
 module.exports = arrayMethods;
 
 

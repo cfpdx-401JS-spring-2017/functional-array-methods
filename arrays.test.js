@@ -25,7 +25,7 @@ describe('map', () => {
             return item + 1;
 
         });
-        assert.deepEqual(mappedArray, [2, 3, 4, , 5, undefined]);
+        assert.deepEqual(mappedArray, [2, 3, 4, , 5, NaN]);
         assert.notDeepEqual(mappedArray, array);
 
     });
