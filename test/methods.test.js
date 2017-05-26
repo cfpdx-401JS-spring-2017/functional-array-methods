@@ -38,6 +38,17 @@ describe('methods', () => {
     assert.deepEqual(returned, [20, 30, 40]);
   });
 
+  // const arr = [...];
+  // const filtered = filter(arr, (item, index) => true);
+  // assert. equal(filtered.length, 0);
+  // this checks that filter ignored holes
+
+//   it('filter when all undefined', () => {
+//     const arr = [undefined, undefined, undefined];
+//     const filtered = filter(arr, (item, index) => true);
+//     assert.equal(filtered.length, 3);
+// });
+
   it('reduce takes in an array and returns an accumulated value based on the callback', () => {
     const array = [15, 2, 20, 30, 40];
 
