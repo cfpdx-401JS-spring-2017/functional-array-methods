@@ -60,16 +60,20 @@ const arrayMethods = {
 
 
     reduce(array, fn, initialValue) {
-        let acc = 0;
+        let acc = initialValue;
+        let currentItem;
         for (let i = 0; i < array.length; i++) {
             if (!array.hasOwnProperty(i)) {
                 continue;
             }
             if (!initialValue) {
-                let currentItem = acc;
-
+                acc = array[0];
+                currentItem = array[i + 1];
+            }
+            else {
+                currentItem = array[i];
                 acc = fn(acc, currentItem, i);
-
+                console.log('method acc', acc);
             }
         }
         return acc;

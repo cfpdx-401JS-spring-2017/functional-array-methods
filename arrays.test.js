@@ -85,10 +85,11 @@ describe('every', () => {
     describe('reduce', () => {
         it('returns the accumulator and a single value ', () => {
             const array = [1, 2, 3, , 4];
-            const results = arrayMethods.reduce(array, (acc, currentItem, index) => {
-                return acc += currentItem;
-            }, 0);
-            assert.equal(results, 10);
+            let acc = arrayMethods.reduce(array, (acc, currentItem, i) => {
+                console.log('acc', acc);
+                return acc + currentItem;
+            }, 1);
+            assert.equal(acc, 11);
         });
 
 
