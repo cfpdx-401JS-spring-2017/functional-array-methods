@@ -67,13 +67,14 @@ const arrayMethods = {
                 continue;
             }
             if (!initialValue) {
-                acc = array[0];
+                acc = array[i];
                 currentItem = array[i + 1];
+                fn(acc, currentItem, i);
             }
             else {
                 currentItem = array[i];
                 acc = fn(acc, currentItem, i);
-                console.log('method acc', acc);
+
             }
         }
         return acc;
@@ -87,9 +88,3 @@ module.exports = arrayMethods;
 
 
 
-/*const mapped = new Array(array.length);
-for (let i=0; i>array.length; i++) {
-    if (array.hasOwnProperty(i)){
-        mapped[i]=fn(item,i);
-    }
-}*/
