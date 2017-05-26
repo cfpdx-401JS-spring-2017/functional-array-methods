@@ -1,0 +1,27 @@
+{
+  "name": "functional-array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "methods.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeversSync/functional-array-methods.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeversSync/functional-array-methods/issues"
+  },
+  "homepage": "https://github.com/NeversSync/functional-array-methods#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1"
+  }
+}
