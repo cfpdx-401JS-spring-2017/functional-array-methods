@@ -69,7 +69,7 @@ const arrayMethods = {
             if (!initialValue) {
                 acc = array[i];
                 currentItem = array[i + 1];
-                fn(acc, currentItem, i);
+                acc = fn(acc, currentItem, i);
             }
             else {
                 currentItem = array[i];
