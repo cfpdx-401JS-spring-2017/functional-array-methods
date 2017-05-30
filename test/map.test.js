@@ -4,7 +4,7 @@ const map = require('../methods/map');
 
 describe('map', () => {
 
-  it('performs method on each item of array and return an array', () => {
+  it.only('performs method on each item of array and returns an array', () => {
     const array = [1, 2, 3];
     na = map(array, (item, index) => {
       array[index] = item + 1;

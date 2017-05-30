@@ -1,10 +1,11 @@
 function map(array, callback) {
+  const newArray = [];
   for (var i = 0; i < array.length; i++) {
     if (array.hasOwnProperty(i) && array[i] !== undefined) {
-      callback(array[i], i);
+      newArray.push(callback(array[i], i));
     }
   }
-  return undefined;
+  return newArray;
 }
 
 
