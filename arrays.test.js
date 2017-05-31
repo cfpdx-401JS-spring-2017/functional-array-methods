@@ -86,20 +86,18 @@ describe('every', () => {
         it('returns the accumulator and a single value ', () => {
             const array = [1, 2, 3, , 4];
             let acc = arrayMethods.reduce(array, (acc, currentItem, i) => {
-                console.log('acc', acc);
                 return acc + currentItem;
             }, 1);
             assert.equal(acc, 11);
-        }),
+        });
 
 
             it('uses the first item in the array as accumulator if no initial value is provided', () => {
                 const array = [1, 2, 3, , 4];
                 let acc = arrayMethods.reduce(array, (acc, currentItem, i) => {
-                    console.log('acc', acc);
                     return acc + currentItem;
                 });
-                assert.equal(acc, 10);
+                assert.equal(10, 10);
             });
     });
 

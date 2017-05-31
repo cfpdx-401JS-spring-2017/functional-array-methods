@@ -60,15 +60,17 @@ const arrayMethods = {
 
 
     reduce(array, fn, initialValue) {
+
         let acc = initialValue;
         let currentItem;
         for (let i = 0; i < array.length; i++) {
             if (!array.hasOwnProperty(i)) {
                 continue;
             }
-            if (!initialValue) {
+            if (initialValue === undefined) {
                 acc = array[i];
                 currentItem = array[i + 1];
+                console.log('here', fn(acc, currentItem, i));
                 acc = fn(acc, currentItem, i);
             }
             else {
