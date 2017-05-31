@@ -28,7 +28,7 @@ describe('map', () => {
         let newArr = map(array, (item, index) => {
             return item + 1;
         });
-        assert.deepEqual(newArr, [2,3,4,5,,]);
+        assert.deepEqual(newArr, [2,3,4,5,NaN,]);
         
     });
 });

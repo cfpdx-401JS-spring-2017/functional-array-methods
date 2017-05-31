@@ -16,8 +16,11 @@
     "url": "https://github.com/kawallis/functional-array-methods/issues"
   },
   "devDependencies": {
-  "chai": "*",
-  "mocha": "*"
-},
-  "homepage": "https://github.com/kawallis/functional-array-methods#readme"
+    "chai": "*",
+    "mocha": "*"
+  },
+  "homepage": "https://github.com/kawallis/functional-array-methods#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2"
+  }
 }
