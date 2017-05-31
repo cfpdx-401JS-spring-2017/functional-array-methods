@@ -3,7 +3,7 @@
 
 ## Description
 
-This is a solo assignment. Try and do these from scratch, **do not google solutions**. Relevant info is in lab details below.
+This is a solo assignment. Try and do these from scratch, **do not g ogle solutions**. Relevant info is in lab details below.
 
 Implement select array methods from scratch (only use `array.length`, `array[i] = value`, `value = array[i]`). 
 

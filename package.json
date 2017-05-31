@@ -1,0 +1,26 @@
+{
+  "name": "functional-array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawallis/functional-array-methods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kawallis/functional-array-methods/issues"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "homepage": "https://github.com/kawallis/functional-array-methods#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2"
+  }
+}
