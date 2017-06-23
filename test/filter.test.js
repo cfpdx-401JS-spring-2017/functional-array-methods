@@ -20,7 +20,7 @@ describe('filter', () => {
     assert.deepEqual(na, [2, 4]);
   });
 
-  it.only('does not ignore undefined', () => {
+  it('does not ignore undefined', () => {
     const array = [2, undefined, 4];
     let na = filter(array, (item, index) => {
       if (item !== undefined) {

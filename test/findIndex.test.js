@@ -2,7 +2,7 @@ const chai = require('chai');
 const assert = chai.assert;
 const findIndex = require('../methods/findIndex');
 
-describe.only('findIndex', () => {
+describe('findIndex', () => {
 
   it('return first even numbers', () => {
     const array = [1, 2, 3, 4, 5, 6];
