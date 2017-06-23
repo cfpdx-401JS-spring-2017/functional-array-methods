@@ -2,7 +2,7 @@ const chai = require('chai');
 const assert = chai.assert;
 const reduce = require('../methods/reduce');
 
-describe.only('reduce', () => {
+describe('reduce', () => {
 
   it('takes an accumulator and initial value', () => {
     let array = [1, 2, 3, 4];
