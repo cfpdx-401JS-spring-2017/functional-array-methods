@@ -2,7 +2,7 @@ const chai = require('chai');
 const assert = chai.assert;
 const every = require('../methods/every');
 
-describe.only('every', () => {
+describe('every', () => {
 
   it('returns false for an array of odd and even numbers', () => {
     const array = [1, 2, 3, 4, 5, 6];

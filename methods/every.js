@@ -1,4 +1,4 @@
-function filter(array, callback) {
+function every(array, callback) {
   for (var i = 0; i < array.length; i++) {
     if (array.hasOwnProperty(i)) {
       if (callback(array[i], i) === false){
@@ -11,5 +11,5 @@ function filter(array, callback) {
 
 
 
-module.exports = filter;
+module.exports = every;
 
