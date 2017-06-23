@@ -23,6 +23,9 @@ describe.only('every', () => {
   it('returns false and does not ignore undefined', () => {
     const array = [2, undefined, 4];
     let result = every(array, (item, index) => {
+      if (item === undefined) {
+        return false;
+      }
       return !(item % 2);
     });
     assert.deepEqual(result, false);
