@@ -20,7 +20,7 @@ describe('findIndex', () => {
     assert.deepEqual(result, 2);
   });
 
-  it('ignores undefined', () => {
+  it('does not ignore undefined', () => {
     const array = [2, undefined, 4];
     let result = findIndex(array, (item, index) => {
       return !(item % 2);
